@@ -1,0 +1,105 @@
+<div class="projects">
+    <div class="title-section">
+        <div class="title">
+       <svg
+  class="project-icon"
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <path
+    d="M4 5.5C4 4.67 4.67 4 5.5 4H10L12 6H18.5C19.33 6 20 6.67 20 7.5V18.5C20 19.33 19.33 20 18.5 20H5.5C4.67 20 4 19.33 4 18.5V5.5Z"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <path
+    d="M8 12H16"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"/>
+
+  <path
+    d="M8 15H13"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"/>
+
+</svg>
+            <h1>Featured Projects</h1>
+        </div>
+        <div class="view-all">
+            <button (click)="openGitHub()">View All Projects ➡️</button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card-one">
+            <div class="card project-card">
+                <img src="aurex.png" class="card-img-top" alt="Aurex GRC Platform">
+
+                <div class="card-body">
+                    <h5 class="card-title">Aurex – GRC Audit Management</h5>
+
+                    <p class="card-text">
+                        Enterprise GRC platform for audit management, compliance tracking,
+                        dashboards & risk-based workflows.
+                    </p>
+
+                    <div class="btn-set">
+                        <button class="info">Angular</button>
+                        <button class="info">TypeScript</button>
+                        <button class="info">RxJS</button>
+                        <button class="info">NgRx</button>
+                        <button class="info">D3.js</button>
+                    </div>
+
+                    <a class="btn btn-primary">Professional Experience</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-one">
+            <div class="card project-card">
+                <img src="ems.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Employee Management System</h5>
+                    <p class="card-text">Enterprise application with dashboards,data visualizations & state management
+                    </p>
+                    <div class="btn-set">
+                        <button class="info">Angular</button>
+                        <button class="info">D3</button>
+                        <button class="info">NgRx</button>
+                        <button class="info">Rxjs</button>
+                    </div>
+
+                    <a (click)="openEmsApp()"
+                        class="btn btn-primary">View Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-one">
+            <div class="card project-card">
+                <img src="track.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tracking-App</h5>
+                    <p class="card-text">Location-sharing web app with interactive maps & shareable URLs.</p>
+                    <div class="btn-set">
+                        <button class="info">JavaScript</button>
+                        <button class="info">Node</button>
+                        <button class="info">Webpack</button>
+                        <button class="info">Geolocation</button>
+                    </div>
+                    <a (click)="openTrackingApp()"
+                        class="btn btn-primary">
+                        Visit Site
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

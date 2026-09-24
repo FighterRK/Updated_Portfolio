@@ -1,0 +1,1042 @@
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
+
+:host {
+    --skills-bg: #f8fafc;
+    --skills-surface: rgba(255, 255, 255, 0.72);
+    --skills-surface-hover: rgba(255, 255, 255, 0.95);
+
+    --skills-text: #111827;
+    --skills-secondary: #64748b;
+
+    --skills-border: rgba(15, 23, 42, 0.09);
+
+    --skills-accent: var(--accent-color, #2563eb);
+    --skills-accent-soft: rgba(37, 99, 235, 0.09);
+
+    --skills-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.09);
+}
+
+
+/* =========================================
+   DARK THEME
+   ========================================= */
+
+:host-context([data-theme="dark"]) {
+
+    --skills-bg: #09131f;
+
+    --skills-surface: rgba(255, 255, 255, 0.035);
+
+    --skills-surface-hover: rgba(255, 255, 255, 0.065);
+
+    --skills-text: #f8fafc;
+
+    --skills-secondary: #9ca9b8;
+
+    --skills-border: rgba(255, 255, 255, 0.08);
+
+    --skills-accent: var(--accent-color, #60a5fa);
+
+    --skills-accent-soft: rgba(96, 165, 250, 0.09);
+
+    --skills-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.32);
+}
+
+
+/* =========================================
+   MAIN SECTION
+   ========================================= */
+
+.main-section {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--skills-border);
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 85% 0%,
+            var(--skills-accent-soft),
+            transparent 30%
+        ),
+        var(--skills-bg);
+
+    color: var(--skills-text);
+
+    box-shadow: var(--skills-shadow);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Ambient glow */
+
+.main-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -120px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: var(--skills-accent);
+
+    opacity: 0.05;
+
+    filter: blur(55px);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* Top accent line */
+
+.main-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--skills-accent),
+        transparent
+    );
+
+    opacity: 0.45;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+/* =========================================
+   TITLE ICON
+   ========================================= */
+
+.section-icon {
+
+    width: 38px;
+    height: 38px;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--skills-border);
+
+    border-radius: 11px;
+
+    color: var(--skills-accent);
+
+    background: var(--skills-accent-soft);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.title:hover .section-icon {
+
+    transform: rotate(-5deg) scale(1.05);
+
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.title h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    line-height: 1.2;
+
+    color: var(--skills-text);
+}
+
+
+/* =========================================
+   CATEGORY BUTTONS
+   ========================================= */
+
+.btn-set {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    padding: 5px;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    border: 1px solid var(--skills-border);
+
+    border-radius: 13px;
+
+    background: var(--skills-surface);
+
+    backdrop-filter: blur(10px);
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   CATEGORY BUTTON
+   ========================================= */
+
+.category-btn {
+
+    position: relative;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--skills-secondary);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.category-btn:hover {
+
+    color: var(--skills-text);
+
+    background: var(--skills-accent-soft);
+
+}
+
+
+.category-btn.active {
+
+    color: white;
+
+    background: var(--skills-accent);
+
+    box-shadow:
+        0 5px 18px
+        color-mix(
+            in srgb,
+            var(--skills-accent) 30%,
+            transparent
+        );
+
+}
+
+
+.category-btn:active {
+
+    transform: scale(0.96);
+
+}
+
+
+/* =========================================
+   SLIDER
+   ========================================= */
+
+.slider-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 28px;
+}
+
+
+/* =========================================
+   CARDS WINDOW
+   ========================================= */
+
+.cards-window {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 5px 2px 8px;
+}
+
+
+/* =========================================
+   CARD TRACK
+   ========================================= */
+
+.card-track {
+
+    display: flex;
+
+    width: 100%;
+
+    transition:
+        transform 0.5s
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================
+   CARD SET
+   ========================================= */
+
+.card-set {
+
+    flex: 0 0 25%;
+
+    padding: 5px 7px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   SKILL CARD
+   ========================================= */
+
+.card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 155px;
+
+    padding: 20px 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    border: 1px solid var(--skills-border);
+
+    border-radius: 17px;
+
+    background: var(--skills-surface);
+
+    color: var(--skills-text);
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Top glow */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -35px;
+
+    left: 50%;
+
+    width: 90px;
+    height: 70px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: var(--skills-accent);
+
+    opacity: 0;
+
+    filter: blur(30px);
+
+    transition: opacity 0.35s ease;
+}
+
+
+/* Bottom tiny accent */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 25%;
+
+    width: 50%;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--skills-accent);
+
+    transform: scaleX(0);
+
+    transition: transform 0.35s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+   ========================================= */
+
+.card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: color-mix(
+        in srgb,
+        var(--skills-accent) 45%,
+        var(--skills-border)
+    );
+
+    background: var(--skills-surface-hover);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.card:hover::before {
+
+    opacity: 0.10;
+
+}
+
+
+.card:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+.image-wrapper {
+
+    position: relative;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        var(--skills-accent-soft);
+
+    border: 1px solid var(--skills-border);
+
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease;
+}
+
+
+.card:hover .image-wrapper {
+
+    transform:
+        translateY(-3px)
+        scale(1.06);
+
+    background:
+        var(--skills-accent-soft);
+}
+
+
+/* Logo */
+
+.image-wrapper img {
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.card:hover .image-wrapper img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================
+   CARD BODY
+   ========================================= */
+
+.card-body {
+
+    padding: 0;
+}
+
+
+/* =========================================
+   SKILL NAME
+   ========================================= */
+
+.card-text {
+
+    position: relative;
+
+    margin: 0;
+
+    color: var(--skills-text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.card:hover .card-text {
+
+    color: var(--skills-accent);
+
+}
+
+
+/* =========================================
+   SLIDER BUTTON
+   ========================================= */
+
+.slider-btn {
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--skills-border);
+
+    border-radius: 12px;
+
+    background: var(--skills-surface);
+
+    color: var(--skills-text);
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.slider-btn svg {
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+.slider-btn:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    background: var(--skills-accent);
+
+    border-color: var(--skills-accent);
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px
+        color-mix(
+            in srgb,
+            var(--skills-accent) 25%,
+            transparent
+        );
+}
+
+
+.slider-btn:active:not(:disabled) {
+
+    transform: scale(0.94);
+
+}
+
+
+.slider-btn:disabled {
+
+    opacity: 0.25;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .card-set {
+
+        flex: 0 0 33.333333%;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .main-section {
+
+        padding: 27px 20px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .title h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .section-icon {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+
+    .card-set {
+
+        flex: 0 0 50%;
+
+    }
+
+
+    .slider-wrapper {
+
+        gap: 7px;
+
+    }
+
+
+    .slider-btn {
+
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+
+    }
+
+
+    .slider-btn svg {
+
+        width: 16px;
+        height: 16px;
+
+    }
+
+
+    .card {
+
+        min-height: 145px;
+
+        padding: 15px 10px;
+
+    }
+
+
+    .image-wrapper {
+
+        width: 58px;
+        height: 58px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .image-wrapper img {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .main-section {
+
+        padding: 23px 15px;
+
+    }
+
+
+    .btn-set {
+
+        width: 100%;
+
+        gap: 4px;
+
+        justify-content: center;
+
+    }
+
+
+    .category-btn {
+
+        flex: 1;
+
+        padding: 8px 8px;
+
+        font-size: 10px;
+
+    }
+
+
+    .card-set {
+
+        flex: 0 0 100%;
+
+    }
+
+
+    .card {
+
+        min-height: 150px;
+
+    }
+
+}
+
+.skill-logo.react {
+    filter:
+        invert(67%)
+        sepia(94%)
+        saturate(1800%)
+        hue-rotate(150deg)
+        brightness(105%);
+}
+
+.skill-logo.angular {
+    filter:
+        invert(18%)
+        sepia(95%)
+        saturate(5000%)
+        hue-rotate(335deg)
+        brightness(100%);
+}
+
+.skill-logo.typescript {
+    filter:
+        invert(40%)
+        sepia(90%)
+        saturate(1800%)
+        hue-rotate(175deg)
+        brightness(105%);
+}
+
+.skill-logo.javascript {
+    filter:
+        invert(80%)
+        sepia(90%)
+        saturate(1800%)
+        hue-rotate(5deg)
+        brightness(105%);
+}
+
+.skill-logo.html {
+    filter:
+        invert(38%)
+        sepia(90%)
+        saturate(3000%)
+        hue-rotate(350deg)
+        brightness(105%);
+}
+
+.skill-logo.css {
+    filter:
+        invert(40%)
+        sepia(90%)
+        saturate(2500%)
+        hue-rotate(175deg)
+        brightness(105%);
+}
+.skill-logo.d3 {
+    filter:
+        invert(72%)
+        sepia(95%)
+        saturate(2200%)
+        hue-rotate(355deg)
+        brightness(105%);
+}
+
+.skill-logo.ngrx {
+    filter:
+        invert(38%)
+        sepia(80%)
+        saturate(2500%)
+        hue-rotate(245deg)
+        brightness(105%);
+}
+
+.skill-logo.rxjs {
+    filter:
+        invert(35%)
+        sepia(95%)
+        saturate(3000%)
+        hue-rotate(325deg)
+        brightness(105%);
+}
+/* BACKEND */
+
+.skill-logo.node {
+    filter:
+        invert(44%)
+        sepia(95%)
+        saturate(1500%)
+        hue-rotate(75deg)
+        brightness(105%);
+}
+
+.skill-logo.express {
+    filter:
+        invert(95%)
+        sepia(10%)
+        saturate(100%)
+        brightness(110%);
+}
+
+.skill-logo.mongodb {
+    filter:
+        invert(60%)
+        sepia(90%)
+        saturate(1700%)
+        hue-rotate(65deg)
+        brightness(100%);
+}
+
+.skill-logo.bootstrap {
+    filter:
+        invert(35%)
+        sepia(55%)
+        saturate(1800%)
+        hue-rotate(235deg)
+        brightness(100%);
+}
+
+.skill-logo.tailwind {
+    filter:
+        invert(65%)
+        sepia(85%)
+        saturate(1800%)
+        hue-rotate(160deg)
+        brightness(105%);
+}
+/* Git — official orange */
+.skill-logo.git {
+    filter: invert(47%) sepia(97%) saturate(3278%)
+            hue-rotate(359deg) brightness(101%) contrast(103%);
+}
+
+
+/* GitHub — official black/white */
+.skill-logo.github {
+    filter: invert(100%);
+}
+
+
+/* Claude — official orange/brown */
+.skill-logo.claude {
+    filter: invert(51%) sepia(48%) saturate(1092%)
+            hue-rotate(347deg) brightness(92%) contrast(89%);
+}
+
+
+/* GitHub Copilot — official purple */
+.skill-logo.githubcopilot {
+    filter: invert(32%) sepia(96%) saturate(1878%)
+            hue-rotate(239deg) brightness(91%) contrast(94%);
+}
+
+
+/* Postman — official orange */
+.skill-logo.postman {
+    filter: invert(57%) sepia(96%) saturate(3143%)
+            hue-rotate(359deg) brightness(102%) contrast(103%);
+}
+
+
+/* GitLab — official orange */
+.skill-logo.gitlab {
+    filter: invert(49%) sepia(99%) saturate(2575%)
+            hue-rotate(357deg) brightness(102%) contrast(101%);
+}
+
+.skill-logo.agile,
+.skill-logo.scrum {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+
+    filter:
+        invert(60%)
+        sepia(80%)
+        saturate(1500%)
+        hue-rotate(170deg)
+        brightness(105%);
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.title-content span {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--skills-secondary);
+}

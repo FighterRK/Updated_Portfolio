@@ -1,0 +1,56 @@
+<nav class="nav-bar">
+  <div class="main">
+
+    <!-- Logo -->
+    <a class="logo" routerLink=" ">
+      <span class="water-text">RK</span>
+    </a>
+
+    <!-- Navigation -->
+    <div class="set">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+             <li><a routerLink="/skills">Skills</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li><a routerLink="/experience">Experience</a></li>
+                <li><a routerLink="/education">Education</a></li>
+                        <li><a routerLink="/certification">Certification</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+
+      <button class="btn" role="button">
+        Download CV
+        <span class="arrow">↗</span>
+      </button>
+
+      <div
+        (click)="_theme.toggleTheme($event)"
+        class="theme"
+        aria-label="Toggle theme"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3
+                   7 7 0 0 0 21 12.79Z">
+          </path>
+        </svg>
+      </div>
+
+    </div>
+
+  </div>
+</nav>

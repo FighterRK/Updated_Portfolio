@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* =========================================
+   THEME
+   ========================================= */
+
+:host {
+
+  --cert-bg: #f8fafc;
+  --cert-text: #111827;
+  --cert-secondary: #475569;
+
+  --cert-item-bg: #f8fafc;
+  --cert-item-border: #cbd5e1;
+
+  --cert-icon-bg: #eef2f7;
+
+  --cert-accent: #8b5cf6;
+
+}
+
+
+:host-context([data-theme="dark"]) {
+
+  --cert-bg: #0b1622;
+  --cert-text: #f5f7fa;
+  --cert-secondary: #aeb8c4;
+
+  --cert-item-bg: rgba(30, 43, 57, 0.45);
+  --cert-item-border: #33465a;
+
+  --cert-icon-bg: #172638;
+
+  --cert-accent: #a78bfa;
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.certifications-card {
+
+  width: 100%;
+
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(31, 48, 64, 0.18),
+      transparent 70%
+    ),
+    var(--cert-bg);
+
+  color: var(--cert-text);
+
+  margin-top: 15px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.certifications-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+
+.certifications-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   HEADER ICON
+   ========================================= */
+
+.certification-main-icon {
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--cert-accent);
+
+  flex-shrink: 0;
+}
+
+
+.certification-main-icon svg {
+
+  width: 36px;
+  height: 36px;
+
+  filter:
+    drop-shadow(
+      0 0 6px rgba(139, 92, 246, 0.25)
+    );
+}
+
+
+/* =========================================
+   HEADER TITLE
+   ========================================= */
+
+.certifications-title h1 {
+
+  margin: 0;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+
+  color: var(--cert-text);
+}
+
+
+/* =========================================
+   VIEW ALL
+   ========================================= */
+
+.view-all {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #60a5fa;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.view-all:hover {
+
+  color: #3b82f6;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================
+   CERTIFICATION LIST
+   ========================================= */
+
+.certification-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================
+   CERTIFICATION ITEM
+   ========================================= */
+
+.certification-item {
+
+  min-height: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 18px 24px;
+
+  border-radius: 14px;
+
+  border: 1px solid var(--cert-item-border);
+
+  background: var(--cert-item-bg);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.certification-item:hover {
+
+  transform: translateY(-2px);
+
+  border-color: rgba(96, 165, 250, 0.55);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   CERTIFICATION LOGO
+   ========================================= */
+
+.certification-logo {
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--cert-icon-bg);
+
+  color: #e2e8f0;
+
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+
+.certification-logo svg {
+
+  width: 30px;
+  height: 30px;
+}
+
+
+/* AWS */
+
+.aws-logo {
+
+  color: #60a5fa;
+}
+
+
+/* =========================================
+   CERTIFICATION INFORMATION
+   ========================================= */
+
+.certification-info {
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.certification-info h3 {
+
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: var(--cert-text);
+
+  letter-spacing: -0.2px;
+}
+
+
+.certification-info p {
+
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+
+  color: var(--cert-secondary);
+}
+
+
+/* =========================================
+   EXTERNAL LINK
+   ========================================= */
+
+.certificate-link {
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--cert-secondary);
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.certificate-link:hover {
+
+  color: #60a5fa;
+
+  background: rgba(96, 165, 250, 0.08);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+  .certifications-card {
+
+    padding: 25px 20px;
+  }
+
+
+  .certifications-header {
+
+    margin-bottom: 22px;
+  }
+
+
+  .certifications-title {
+
+    gap: 13px;
+  }
+
+
+  .certifications-title h1 {
+
+    font-size: 21px;
+  }
+
+
+  .certification-main-icon {
+
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .certification-main-icon svg {
+
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .view-all {
+
+    font-size: 13px;
+  }
+
+
+  .certification-item {
+
+    min-height: 90px;
+
+    padding: 15px;
+
+    gap: 15px;
+  }
+
+
+  .certification-logo {
+
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .certification-logo svg {
+
+    width: 26px;
+    height: 26px;
+  }
+
+
+  .certification-info h3 {
+
+    font-size: 15px;
+  }
+
+
+  .certification-info p {
+
+    font-size: 13px;
+  }
+
+
+  .certificate-link {
+
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 450px) {
+
+  .certifications-card {
+
+    padding: 22px 15px;
+  }
+
+
+  .certification-item {
+
+    gap: 12px;
+
+    padding: 13px;
+  }
+
+
+  .certification-info h3 {
+
+    font-size: 14px;
+  }
+
+
+  .certification-info p {
+
+    font-size: 12px;
+  }
+
+
+  .certificate-link {
+
+    width: 26px;
+    height: 26px;
+  }
+
+}

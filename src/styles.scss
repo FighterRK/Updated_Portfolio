@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global theme variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-color: #f5f5f5;
+  --border-color: #dddddd;
+  --accent-color: #2563eb;
+  --icon-color: #111111;
+  --bg-rgb: 255, 255, 255;
+  --btn-shadow-color: #ffe54c;
+   --icon-accent-color: #b88600;
+
+  --container-width: 1200px;
+  --container-padding: 24px;
+  --code-highlight: #b45309;
+  --secondary-btn-bg: #eff6ff;
+    --card-bg-color: #0d1823;
+  --text-color: #f5f7fa;
+  --secondary-text-color: #c1c8d0;
+  --border-color: rgba(255, 255, 255, 0.08);
+      --card-bg-color: #0c1722;
+    --card-text-color: #ffffff;
+    --card-secondary-text-color: #c1c8d0;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --icon-accent-color: #ffe54c;
+   --secondary-btn-bg: #172554;
+  --bg-color: #0b1120;
+  --text-color: #ffffff;
+  --card-color: #111827;
+  --border-color: #1f2937;
+  --accent-color: #60a5fa;
+  --icon-color: #ffffff;
+  --bg-rgb: 11, 17, 32;
+  --btn-shadow-color: #60a5fa;
+   --code-highlight: #ffe54c;
+       --card-bg-color: #0c1722;
+    --text-color: #f5f7fa;
+    --secondary-text-color: #c1c8d0;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --accent-color: #4da3ff;
+
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --bg-rgb: 255, 255, 255;
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-color: #f5f5f5;
+  --border-color: #dddddd;
+  --accent-color: #2563eb;
+    --icon-color: #111111;
+      --btn-shadow-color: #ffe54c;
+
+}
+
+html.theme-transition body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+
+}
+

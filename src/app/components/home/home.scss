@@ -1,0 +1,11 @@
+.container {
+  width: min(calc(100% - (2 * var(--container-padding))),
+      var(--container-width));
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+  }
+}

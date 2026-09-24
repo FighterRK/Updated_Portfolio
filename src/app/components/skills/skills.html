@@ -1,0 +1,221 @@
+<div class="main-section">
+
+
+  <!-- =========================================
+       TITLE
+       ========================================= -->
+
+<div class="title">
+
+    <svg
+        class="section-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M8 9L5 12L8 15"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M16 9L19 12L16 15"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M14 5L10 19"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+        />
+    </svg>
+
+    <div class="title-content">
+        <h1>My Skills</h1>
+        <span>Technologies I work with</span>
+    </div>
+
+</div>
+
+  <!-- =========================================
+       CATEGORY BUTTONS
+       ========================================= -->
+
+  <div class="btn-set">
+
+
+    <button
+      type="button"
+      class="category-btn"
+      [class.active]="selectedCategory === 'frontend'"
+      (click)="selectCategory('frontend')"
+    >
+      Frontend
+    </button>
+
+
+    <button
+      type="button"
+      class="category-btn"
+      [class.active]="selectedCategory === 'backend'"
+      (click)="selectCategory('backend')"
+    >
+      Backend
+    </button>
+
+
+    <button
+      type="button"
+      class="category-btn"
+      [class.active]="selectedCategory === 'tools'"
+      (click)="selectCategory('tools')"
+    >
+      Tools
+    </button>
+
+
+    <button
+      type="button"
+      class="category-btn"
+      [class.active]="selectedCategory === 'methodologies'"
+      (click)="selectCategory('methodologies')"
+    >
+      Methodologies
+    </button>
+
+
+  </div>
+
+
+  <!-- =========================================
+       SLIDER
+       ========================================= -->
+
+  <div class="slider-wrapper">
+
+
+    <!-- PREVIOUS -->
+
+    <button
+      type="button"
+      class="slider-btn"
+      [disabled]="!canGoPrevious"
+      (click)="previous()"
+      aria-label="Previous skills"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          d="M15 18L9 12L15 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
+
+    </button>
+
+
+    <!-- =========================================
+         CARD WINDOW
+         ========================================= -->
+
+    <div class="cards-window">
+
+      <div
+        class="card-track"
+        [style.transform]="
+          'translateX(-' +
+          (currentIndex * (100 / visibleCards)) +
+          '%)'
+        "
+      >
+
+        @for (item of filteredSkills; track item.id) {
+
+          <div class="card-set">
+
+            <div class="card">
+
+
+              <!-- IMAGE -->
+
+              <div class="image-wrapper">
+
+                <img
+                 [class]="'skill-logo ' + item.id"
+                  [src]="item.img"
+                  [alt]="item.name"
+                >
+
+              </div>
+
+
+              <!-- NAME -->
+
+              <div class="card-body">
+
+                <p class="card-text">
+                  {{ item.name }}
+                </p>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- NEXT -->
+
+    <button
+      type="button"
+      class="slider-btn"
+      [disabled]="!canGoNext"
+      (click)="next()"
+      aria-label="Next skills"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          d="M9 18L15 12L9 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
+
+    </button>
+
+
+  </div>
+
+</div>

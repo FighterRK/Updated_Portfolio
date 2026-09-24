@@ -1,0 +1,165 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg-color);
+
+  color: var(--text-color);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* =========================
+   RK LOGO
+   ========================= */
+
+.logo-wrapper {
+  position: relative;
+
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+
+  background: var(--card-bg);
+
+  box-shadow:
+    0 0 0 1px var(--border-color),
+    0 12px 40px var(--shadow-color);
+
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+.logo-wrapper::before {
+  content: '';
+
+  position: absolute;
+  inset: -8px;
+
+  border: 1px solid var(--accent-color);
+  border-radius: 30px;
+
+  opacity: 0.35;
+
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  color: var(--accent-color);
+}
+
+/* =========================
+   LOADING TEXT
+   ========================= */
+
+.loader-text {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--muted-text);
+}
+
+.dots {
+  display: flex;
+  margin-left: 4px;
+}
+
+.dots i {
+  width: 4px;
+  height: 4px;
+
+  margin: 0 2px;
+
+  border-radius: 50%;
+
+  background: var(--accent-color);
+
+  animation: dot 1.4s infinite ease-in-out;
+}
+
+.dots i:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dots i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes dot {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}

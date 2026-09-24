@@ -1,0 +1,353 @@
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.nav-bar {
+  width: 100%;
+  margin: 0;
+
+  background: color-mix(
+    in srgb,
+    var(--bg-color) 82%,
+    transparent
+  );
+
+  border-bottom: 1px solid var(--border-color);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.main {
+  width: 100%;
+  min-height: 72px;
+
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.water-text {
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--btn-shadow-color);
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  cursor: pointer;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+.water-text:hover {
+  transform: translateY(-2px);
+  letter-spacing: -1px;
+}
+
+
+/* Water animation */
+
+.water-text::before {
+  content: "RK";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 0;
+
+  overflow: hidden;
+
+  color: var(--btn-shadow-color);
+
+  white-space: nowrap;
+
+  transition: height 0.7s ease;
+}
+
+.water-text:hover::before {
+  height: 100%;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.set {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+ul li a {
+  display: block;
+
+  padding: 10px 14px;
+
+  color: var(--text-color);
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  opacity: 0.65;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+}
+
+ul li a:hover {
+  opacity: 1;
+
+  color: var(--btn-shadow-color);
+
+  background-color: var(--card-color);
+}
+
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   CV BUTTON
+   ========================================= */
+
+.btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  color: var(--text-color);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  background: var(--card-color);
+
+  user-select: none;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn:hover {
+  color: var(--btn-shadow-color);
+
+  transform: translateY(-2px);
+
+  border-color: var(--btn-shadow-color);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* Arrow */
+
+.arrow {
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.btn:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================
+   THEME BUTTON
+   ========================================= */
+
+.theme {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 9px;
+
+  color: var(--text-color);
+
+  background: transparent;
+
+  user-select: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme:hover {
+  background: var(--card-color);
+
+  border-color: var(--btn-shadow-color);
+
+  transform: rotate(12deg);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .main {
+    gap: 15px;
+  }
+
+  ul {
+    gap: 2px;
+  }
+
+  ul li a {
+    padding: 9px;
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+}
+
+
+@media (max-width: 720px) {
+
+  .nav-bar {
+    width: calc(100% - 24px);
+    margin-top: 12px;
+  }
+
+  .main {
+    min-height: 64px;
+    padding: 0 12px 0 18px;
+  }
+
+  .set {
+    display: none;
+  }
+
+  .btn {
+    padding: 9px 11px;
+  }
+
+  .btn .arrow {
+    display: none;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .btn {
+    font-size: 12px;
+  }
+
+  .water-text {
+    font-size: 22px;
+  }
+}

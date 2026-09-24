@@ -1,0 +1,376 @@
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   LIGHT THEME
+   ========================================= */
+
+:host {
+  --skills-card-bg: #f5f5f5;
+    --skills-card-bg2: #f8fafc;
+  --skills-text: #111111;
+  --skills-secondary-text: #555555;
+  --skills-border: rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   DARK THEME
+   ========================================= */
+
+:host-context([data-theme="dark"]) {
+    --skills-card-bg2: #0b1622;
+  --skills-card-bg: #0c1722;
+  --skills-text: #f5f7fa;
+  --skills-secondary-text: #c1c8d0;
+  --skills-border: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   PROJECT SECTION
+   ========================================= */
+
+.projects {
+    border-radius: 20px;
+      box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.18);
+  margin-top: 20px;
+  width: 100%;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: var(--skills-card-bg2);
+  color: var(--skills-text);
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title h1 {
+  margin: 0;
+  padding: 10px;
+    font-weight: 600;
+  font-size: 25px;
+  color: var(--skills-text);
+}
+
+.view-all button {
+  all: unset;
+
+  cursor: pointer;
+
+  color: var(--accent-color);
+  font-size: 16px;
+}
+
+.view-all button:hover {
+  opacity: 0.8;
+}
+
+
+/* =========================================
+   CARDS CONTAINER
+   ========================================= */
+
+.cards {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* =========================================
+   CARD WRAPPER
+   ========================================= */
+
+.card-one {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+
+  cursor: pointer;
+
+  border: 1px solid var(--skills-border);
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card-one:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   BOOTSTRAP CARD
+   ========================================= */
+
+.project-card {
+  width: 100% !important;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border: none;
+
+  background: transparent;
+  color: var(--skills-text);
+}
+
+
+/* =========================================
+   PROJECT IMAGE
+   ========================================= */
+
+.project-card .card-img-top {
+  width: 100%;
+  height: 150px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================
+   CARD BODY
+   ========================================= */
+
+.project-card .card-body {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+
+/* =========================================
+   CARD TITLE
+   ========================================= */
+
+.project-card .card-title {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: var(--skills-text);
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+   ========================================= */
+
+.project-card .card-text {
+  margin-bottom: 18px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: var(--skills-text);
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+   ========================================= */
+
+.btn-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   TECHNOLOGY PILL
+   ========================================= */
+
+.info {
+  all: unset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 65px;
+  height: 30px;
+
+  padding: 0 8px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: var(--skills-text);
+
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1;
+
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   PROJECT BUTTON
+   ========================================= */
+
+.project-card .btn-primary {
+  margin-top: auto;
+
+  align-self: flex-start;
+
+  border: none;
+
+  background: var(--accent-color);
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+.project-card .btn-primary:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   DARK THEME - TAGS
+   ========================================= */
+
+:host-context([data-theme="dark"]) .info {
+  background: #18232f;
+
+  border-color: #293746;
+
+  color: #c9d0d8;
+
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   LIGHT THEME - TAGS
+   ========================================= */
+
+:host-context([data-theme="light"]) .info {
+  background: #eeeeee;
+
+  border-color: #d5d5d5;
+
+  color: #333333;
+
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .cards {
+    gap: 15px;
+  }
+
+  .project-card .card-body {
+    padding: 16px;
+  }
+
+  .project-card .card-title {
+    font-size: 18px;
+  }
+
+  .project-card .card-text {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .projects {
+    padding: 20px;
+  }
+
+  .title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card-one {
+    width: 100%;
+  }
+
+  .project-card {
+    min-height: 400px;
+  }
+}
+
+.project-icon {
+  font-size: 30px;
+  color: var(--accent-color);
+  transition: color 0.25s ease;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

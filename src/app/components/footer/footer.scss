@@ -1,0 +1,423 @@
+:host {
+  display: block;
+
+  /* ==============================
+     DARK THEME DEFAULT
+  ============================== */
+
+  --footer-bg: #0b1422;
+  --footer-text: #e8ecf5;
+  --footer-muted: #8e9bb1;
+  --footer-border: rgba(120, 135, 170, 0.08);
+
+  --footer-hover: #8b6cff;
+  --footer-logo: #f4f6fb;
+
+  width: 100%;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 80px;
+
+  background: var(--footer-bg);
+
+  border-radius: 14px 14px 0 0;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   SUBTLE TOP GLOW
+================================= */
+
+.footer::before {
+  content: '';
+
+  position: absolute;
+
+  top: -1px;
+  left: 20%;
+  right: 20%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(110, 90, 255, 0.45),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   INNER
+================================= */
+
+.footer-inner {
+  position: relative;
+  z-index: 2;
+
+  min-height: 125px;
+
+  padding: 28px 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 1fr)
+    auto
+    minmax(300px, 1fr);
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+
+/* =================================
+   BRAND
+================================= */
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* RK LOGO */
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--footer-logo);
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+/* NAME */
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.brand-info h3 {
+  margin: 0;
+
+  color: var(--footer-text);
+
+  font-size: 16px;
+  font-weight: 650;
+
+  letter-spacing: -0.2px;
+}
+
+.brand-info p {
+  margin: 0;
+
+  color: var(--footer-muted);
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  white-space: nowrap;
+}
+
+.footer-nav a {
+  position: relative;
+
+  color: var(--footer-text);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 450;
+
+  opacity: 0.85;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.footer-nav a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--footer-hover);
+
+  transition: width 0.25s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--footer-hover);
+
+  opacity: 1;
+}
+
+.footer-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =================================
+   RIGHT
+================================= */
+
+.footer-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 18px;
+}
+
+
+/* =================================
+   SOCIAL ICONS
+================================= */
+
+.social-links {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.social-links a {
+  width: 20px;
+  height: 20px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--footer-text);
+
+  opacity: 0.9;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--footer-hover);
+
+  opacity: 1;
+
+  transform: translateY(-2px);
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+
+  fill: currentColor;
+
+  stroke: none;
+}
+
+
+/* Email + Globe use strokes */
+
+.social-links a:nth-child(3) svg,
+.social-links a:nth-child(4) svg {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.6;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =================================
+   COPYRIGHT
+================================= */
+
+.copyright {
+  margin: 0;
+
+  color: var(--footer-muted);
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+/* =================================
+   LIGHT THEME
+================================= */
+
+:host-context(.light-theme) {
+  --footer-bg: #f5f7fc;
+
+  --footer-text: #17213a;
+  --footer-muted: #68738b;
+
+  --footer-border: rgba(60, 70, 100, 0.08);
+
+  --footer-hover: #6247ed;
+
+  --footer-logo: #17213a;
+}
+
+
+/* =================================
+   IF YOUR THEME USES DATA ATTRIBUTE
+
+   <body data-theme="light">
+================================= */
+
+:host-context([data-theme='light']) {
+  --footer-bg: #f5f7fc;
+
+  --footer-text: #17213a;
+  --footer-muted: #68738b;
+
+  --footer-border: rgba(60, 70, 100, 0.08);
+
+  --footer-hover: #6247ed;
+
+  --footer-logo: #17213a;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 30px;
+  }
+
+  .footer-nav {
+    justify-content: flex-end;
+  }
+
+  .footer-right {
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .footer {
+    margin-top: 50px;
+
+    border-radius: 12px 12px 0 0;
+  }
+
+  .footer-inner {
+    min-height: auto;
+
+    padding: 35px 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+  }
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .footer-nav {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+
+  .footer-right {
+    width: 100%;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .social-links {
+    gap: 24px;
+  }
+
+  .copyright {
+    font-size: 11px;
+
+    white-space: normal;
+  }
+}
