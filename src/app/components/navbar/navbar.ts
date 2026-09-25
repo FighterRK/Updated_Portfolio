@@ -10,4 +10,12 @@ import { RouterLink } from '@angular/router';
 })
 export class Navbar {
   constructor(public _theme:Theme){}
+  downloadCV(): void {
+  const link = document.createElement('a');
+
+  link.href = '/Rahul_K_Suresh_CV.pdf';
+  link.download = 'Rahul_K_Suresh_CV.pdf';
+
+  link.click();
+}
 }
